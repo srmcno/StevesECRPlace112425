@@ -9,6 +9,19 @@ interface SitePickerProps {
   onSelectLibrary: (libraryId: string) => void;
 }
 
+/**
+ * Renders a "Data Source" panel that lets the user choose a SharePoint site and a dependent document library.
+ *
+ * The library dropdown is disabled until a site is selected. Selecting a site or library calls the corresponding callback with the selected ID.
+ *
+ * @param sites - Available SharePoint sites displayed in the site select
+ * @param libraries - Document libraries displayed in the library select
+ * @param selectedSiteId - Currently selected site ID (empty string when none)
+ * @param selectedLibraryId - Currently selected library ID (empty string when none)
+ * @param onSelectSite - Callback invoked with the selected site ID when the site changes
+ * @param onSelectLibrary - Callback invoked with the selected library ID when the library changes
+ * @returns A JSX element containing the site and library selection UI
+ */
 export function SitePicker({
   sites,
   libraries,

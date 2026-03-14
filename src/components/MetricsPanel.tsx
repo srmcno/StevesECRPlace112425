@@ -6,6 +6,14 @@ interface MetricsPanelProps {
   items: DriveItem[];
 }
 
+/**
+ * Render a metrics panel showing counts of sites, libraries, files, and folders.
+ *
+ * @param sites - Array of SharePoint sites to count and display
+ * @param libraries - Array of document libraries to count and display
+ * @param items - Array of drive items; items with `isFolder === true` are counted as folders, others as files
+ * @returns The React element containing four metric tiles: Sites, Libraries, Files, and Folders
+ */
 export function MetricsPanel({ sites, libraries, items }: MetricsPanelProps) {
   const fileCount = items.filter((item) => !item.isFolder).length;
   const folderCount = items.filter((item) => item.isFolder).length;

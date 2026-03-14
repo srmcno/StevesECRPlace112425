@@ -6,6 +6,17 @@ interface LibraryExplorerProps {
 
 const sizeFormatter = new Intl.NumberFormat('en-US');
 
+/**
+ * Render a table view of drive items for a library root.
+ *
+ * Renders a panel containing a table with columns for Name, Type, Last Modified, and Size.
+ * Each item row links the name to the item's `webUrl`, displays "Folder" or "File" based on `isFolder`,
+ * formats `lastModifiedDateTime` as a locale string when present, and formats `size` using the file-size formatter.
+ * When `items` is empty, displays a single-row empty state prompting the user to choose a site and library.
+ *
+ * @param items - Array of `DriveItem` objects representing the contents of the selected drive root
+ * @returns A React element that displays the library contents table
+ */
 export function LibraryExplorer({ items }: LibraryExplorerProps) {
   return (
     <section className="panel">

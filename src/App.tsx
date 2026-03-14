@@ -9,6 +9,11 @@ import { useSharePointData } from './hooks/useSharePointData';
 
 const msal = new PublicClientApplication(msalConfig);
 
+/**
+ * Root React component that manages authentication, site and library selection, and SharePoint data loading, and renders the application UI.
+ *
+ * @returns The root JSX element for the application UI
+ */
 export default function App() {
   const [accountId, setAccountId] = useState<string | null>(null);
   const [isReady, setIsReady] = useState(false);
